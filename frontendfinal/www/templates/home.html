@@ -1,0 +1,38 @@
+<ion-view>
+<ion-content class="home">
+<div class="card" ng-hide="user">
+  <div class="item-body center-align">
+    <p class="home-desc">
+      Create new messages and analyze their positivity levels!
+      <br />
+      <br />Click into your messages from the list view to access our analysis page.
+      <br />
+      <br />There you will see your message sepparated into a spectrum of highlighted sentences. 
+      <br />
+      <br />Click onto each one to see its individual positivity percentage or click into the "Total Positivity" button to see the positivity level of the entire document.
+    </p>
+  </div>
+</div>
+<div ng-hide="user === undefined" ng-controller="AccountController as account">
+  <div class="list card" ng-show="user">
+    <div class="item item-avatar profile">
+      <img ng-src="{{ user.profileImg }}">
+      <h2 class="profile-user">Welcome, {{ user.displayName }}.</h2>
+    </div>
+  </div>
+
+  <div ng-hide="user">
+    <div>
+      <button ng-click="account.login()" class="button button-full bold fb-button">
+        <i class="ion-social-facebook fb-icon"></i> Log in with Facebook
+      </button>
+    </div>
+
+  </div>
+  <div ng-show="user" >
+    <button ui-sref="tasks" class="button button-full button-dark bold">My Messages</button>
+    <button ng-click="account.logout()" class="button button-full button-stable bold">Logout</button>
+  </div>
+</div>
+</ion-content>
+</ion-view>

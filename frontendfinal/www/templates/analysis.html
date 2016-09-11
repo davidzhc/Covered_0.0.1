@@ -1,0 +1,28 @@
+<ion-view>
+  <ion-nav-bar align-title="center" class="bar-light">
+    <ion-nav-back-button></ion-nav-back-button>
+    <ion-nav-title>
+      Analysis
+    </ion-nav-title>
+  </ion-nav-bar>
+  <ion-content class="padding">
+    <div class="card">
+      <div class="padding">
+        <span ng-click="setBarRGB(posArray[$index])" class="button"  ng-repeat="message in messages" ng-repeat="message in messages" ng-style="setbackground(posArray[$index]*100)">
+          {{message}}
+        </span>
+      </div>
+    </div>
+
+    <div class="card padding">
+      <!--<h3>Dynamic <button type="button" class="btn btn-sm btn-primary" ng-click="random()">Randomize</button></h3>-->
+      <uib-progressbar ng-show="progbar" class="progress-striped active" value="dynamic" type="{{type}}">{{number}} <i ng-show="showWarning"></i></uib-progressbar>
+
+      <p ng-show="progmsg" class="text-center">Please tap the analyze button and then tap the colors to see the sentence's positivity percentage!</p>
+    </div>
+
+    <button ng-show="isVisible" class="button button-full button-positive" ng-click="analyseMongo()">Analyze</button>
+    <button class="button button-full button-positive" ng-show = "totalButton" ng-click="setTotal(posArray)">Total Positivity</button>
+
+  </ion-content>
+</ion-view>

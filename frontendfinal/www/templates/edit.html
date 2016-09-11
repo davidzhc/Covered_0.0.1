@@ -1,0 +1,20 @@
+<ion-view>
+  <ion-nav-bar align-title="center" class="bar-light">
+    <ion-nav-back-button></ion-nav-back-button>
+    <ion-nav-title>
+      EDIT MESSAGE
+    </ion-nav-title>
+  </ion-nav-bar>
+  <ion-content class="padding">
+    <h1 class="account-title center-align">Edit Your Message</h1>
+    <div class="list">
+      <label class="item item-input">
+        <input type="text" placeholder="Title" ng-model="edit.task.title">
+      </label>
+
+      <textarea rows ="15" class="form-control" placeholder="Enter Your Message" ng-model="edit.task.body" ng-change="editbody=edit.task.body">
+      </textarea>
+      <button class="button button-full button-positive" ng-click="edit.save();editMongo()">Submit</button>
+    </div>
+  </ion-content>
+</ion-view>
